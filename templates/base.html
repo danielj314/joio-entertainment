@@ -57,8 +57,8 @@
                 <!-- LOGO -->
                 <div class="col-12 col-md-6 my-auto py-1 py-lg-0 text-center text-lg-left">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                        <!-- <div><img src="../media/joio-logo-white.png" alt="Joio Entertainment"></div> -->
-                        <h2 class="logo-font text-black my-0"><strong>JOIO</strong> Entertainment</h2>
+                        <img class="navbar-brand" src="/media/joio-logo-white.png" alt="logo">
+                        <!-- <h2 class="logo-font text-black my-0"><strong>JOIO</strong> Entertainment</h2> -->
                     </a>
                 </div>
                 <!-- MENU -->
@@ -66,11 +66,11 @@
                     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                         <!-- search and book button -->
                         <li class="list-inline-item dropdown">
-                            <a class="d-none d-md-block btn btn-dark" href="#">Search & Book</a>
+                            <a class="d-none d-md-block btn btn-pink" href="#">Search & Book</a>
                         </li>
                         <!-- account button -->
                         <li class="list-inline-item dropdown">
-                            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="text-center">
                                     <div><i class="fas fa-user fa-lg"></i></div>
                                 </div>
@@ -91,7 +91,7 @@
                         </li>
                         <!-- cart button -->
                         <li class="list-inline-item">
-                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link" href="">
                                 <div class="text-center">
                                     <div><i class="fas fa-cart-shopping fa-lg"></i></div>
                                 </div>
@@ -99,7 +99,7 @@
                         </li>
                         <!-- menu button -->
                         <li class="list-inline-item dropdown">
-                            <a class="text-black nav-link" href="#" id="menu-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="text-white nav-link" href="#" id="menu-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="text-center">
                                     <div><i class="fas fa-bars fa-lg"></i></div>
                                 </div>

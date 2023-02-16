@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('/media/background.jpg') no-repeat center center fixed;
+    background: url('/media/love-dance.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
@@ -19,22 +19,28 @@ body {
     width: 1.5rem;
 }
 
-.logo-font {
-    text-transform: uppercase;
+.navbar-brand{
+    background-color: #000;
+    width: 150%;
 }
 
 .main-logo-link {
-    width: fit-content;
+    width: 30%;
 }
 
 .shop-now-button {
     background: black;
-    color: white;
+    color: rgb(215, 73, 73);
     min-width: 260px;
 }
 
 .btn-black {
     background: black;
+    color: white;
+}
+
+.btn-pink {
+    background: #DA2DD3;
     color: white;
 }
 
@@ -54,6 +60,11 @@ body {
 
 .border-black {
     border: 1px solid black !important;
+}
+
+
+.bg-white {
+    background-color: black!important;
 }
 
 /* -------------------------------- Media Queries */
