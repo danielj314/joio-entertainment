@@ -1,5 +1,14 @@
+/* CSS HEX */
+--neon-blue: #5863f8;
+--eerie-black: #232323;
+--dark-pastel-green: #0cca4a;
+--azure-web: #f2fdff;
+--engineering-orange: #b80c09;
+
+
 html {
     height: 100%;
+    font-family: 'Montserrat', sans-serif; 
 }
 
 body {
@@ -7,7 +16,7 @@ body {
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
-    font-family: 'Lato';
+    font-family: 'Montserrat', sans-serif; 
 }
 
 /* from Bulma */
@@ -22,6 +31,7 @@ body {
 .navbar-brand{
     background-color: #000;
     width: 150%;
+    max-width: 150px;
 }
 
 .main-logo-link {
@@ -39,8 +49,8 @@ body {
     color: white;
 }
 
-.btn-pink {
-    background: #DA2DD3;
+.btn-neon-blue {
+    background: #5863f8;
     color: white;
 }
 
