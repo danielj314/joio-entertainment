@@ -12,12 +12,18 @@ html {
 }
 
 body {
-    background: url('/media/love-dance.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
     color: #555;
     font-family: 'Montserrat', sans-serif; 
 }
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* -------------------------------- Header */
 
 /* from Bulma */
 .icon {
@@ -29,8 +35,8 @@ body {
 }
 
 .navbar-brand{
-    background-color: #000;
-    width: 150%;
+    width: 300%;
+    min-width: 100px;
     max-width: 150px;
 }
 
@@ -38,23 +44,27 @@ body {
     width: 30%;
 }
 
-.shop-now-button {
-    background: black;
-    color: rgb(215, 73, 73);
-    min-width: 260px;
+.nav-2 {
+    /* border-top: 1px solid #f2fdff ; */
+    background: #5863f8;
+    padding-top: 2px;
 }
 
-.btn-black {
-    background: black;
-    color: white;
+.nav-2 a {
+    color: #f2fdff;
+    margin-left: 15px;
+    margin-right: 15px;
 }
+
+/* -------------------------------- Buttons */
+
 
 .btn-neon-blue {
     background: #5863f8;
     color: white;
 }
 
-.shop-now-button:hover,
+/* .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
 .btn-black:hover,
@@ -62,10 +72,17 @@ body {
 .btn-black:focus {
     background: #222;
     color: white;
-}
+} */
+
+
+/* -------------------------------- Colors */
 
 .text-black {
     color: #000 !important;
+}
+
+.text-white {
+    color: #ffffff !important;
 }
 
 .border-black {
@@ -73,9 +90,27 @@ body {
 }
 
 
-.bg-white {
-    background-color: black!important;
+.bg-dark {
+    background-color: #232323!important;
 }
+
+
+/* -------------------------------- Homepage */
+
+.jumbotron {
+    background: url('/media/love-dance.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    color: #f2fdff;
+    padding-top: 200px;
+}
+
+.hero-text {
+    width: 600px;
+    max-width: 90%;
+}
+
 
 /* -------------------------------- Media Queries */
 
@@ -86,17 +121,12 @@ body {
   }
 }
 
-/* fixed top navbar only on medium and up */
-@media (min-width: 992px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
+@media (max-width: 450px) {
+    .nav-link {
+      font-size: 12;
+      padding: 4px;
     }
-
-    .header-container {
-        padding-top: 164px;
+    .navbar-brand {
+        width: 100px;
     }
-}
+  }
