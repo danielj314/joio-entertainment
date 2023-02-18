@@ -45,7 +45,6 @@ body {
 }
 
 .nav-2 {
-    /* border-top: 1px solid #f2fdff ; */
     background: #5863f8;
     padding-top: 2px;
 }
@@ -54,6 +53,10 @@ body {
     color: #f2fdff;
     margin-left: 15px;
     margin-right: 15px;
+}
+
+.header-margin {
+    height: 150px;
 }
 
 /* -------------------------------- Buttons */

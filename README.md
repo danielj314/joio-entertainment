@@ -177,9 +177,13 @@ Wireframes were drawn using Balsamiq at the beginning of the project. They were 
 
 ## Colour Palette
 
-<!-- The Morgan & Co website colour palette is predominantly a dark against light and vice versa approach. Black and white. Dashes of brighter colours are present for the interactive elements in an effort to highlight these and to make a drastic contrast between said interactive elements and other non-interactive content. This concept was decided on early in the projects inception, with a light background providing an ideal canvas to build content upon. The predicted range of colours that comes with furniture and their images - brown/red/black dark leathers, lighter shades with fabric, brown woods, plastics etc. - would all add to a vast range of colours that brought life to the website. It was important to not drown users in an abundance of colour or clutter, and to allow the focus to be on the products. -->
+The Joio Entertainment website colour palette is predominantly dark, using bright colours which stand out against either a black or white background. The dark colours used for the header and footer match the company's images and reflects the style of a party or special events where the company usually operates.
 
-<!-- <img src="docs/colour-palette.png"> -->
+Dashes of brighter colours are present for the interactive elements in an effort to highlight these and to make a drastic contrast between said interactive elements and other non-interactive content. 
+
+Although a black colour is used for certain elements of the site, it was decided that the body of the website should have a white colour, which allows the products and the main information on the pages to stand out more clearly..
+
+<!-- <img src="media/color-palette.png"> --> ????
 
 <!-- The main background image (background-blue.jpg) provides a complimentary pastel colour, which fits with the font colours and button-styling colours chosen. It evokes a relaxing and gentle mood - helped by the opacity level neutralizing the vividity of the image. This is all to distinguish depth, and to allow headings, text and buttons to blossom at the forefront. Stylistically, this is in keeping with the overall feel of the website and the brand itself, but equally so, it's vital for content readability and the overall user experience.
 
