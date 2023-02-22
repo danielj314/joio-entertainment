@@ -2,78 +2,73 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col text-center mt-md-3">
-                <h2>Products and Services</h2>
-                <hr class="w-50 mb-1">
-            </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-center mt-md-3">
+            <h2>Products and Services</h2>
+            <hr class="w-50 mb-3">
         </div>
+    </div>
+
+    <!--Products-->
+    <div class="product-container col-10 offset-1 col-lg-8 offset-lg-2">
         <div class="row">
-            <div class="product-container col-10 offset-1">
-                <div class="row mt-1 mb-2"></div>
-                <div class="row">
-                    {% for product in products %}
-                        <div class="col-sm-10 col-lg-6">
-                            <div class="card h-100 border-0">
-                                {% if product.image %}
-                                <a href="">
-                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                                </a>
-                                {% else %}
-                                <a href="">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                                </a>
-                                {% endif %}
-                                <div class="card-body pb-0">
-                                    <p class="mb-0">{{ product.name }}</p>
+            {% for product in products %}
+            <!--Individual Product card-->
+            <div class="card card-full-width mb-3 product-card align-items-center">
+                <div class="row no-gutters align-items-center">
+                    <div class="col-md-6 col-lg-7">
+                        <!--Product Image-->
+                        {% if product.image %}
+                        <div>
+                            <img class="card-img-top img-fluid product-img" src="{{ product.image.url }}"
+                                alt="{{ product.name }}">
+                        </div>
+                        {% else %}
+                        <div>
+                            <img class="card-img-top img-fluid product-img" src="{{ MEDIA_URL }}noimage.png"
+                                alt="{{ product.name }}">
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-6 col-lg-5">
+                        <div class="card-body p-lg-5">
+                            <div class="row">
+                                <div class="col-8">
+                                    <h5 class="card-title">{{ product.name }}</h5>
                                 </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
-                                            {% if product.rating %}
-                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                                            {% else %}
-                                                <small class="text-muted">No Rating</small>
-                                            {% endif %}
-                                        </div>
-                                    </div>
+                            </div>
+                            <hr class="mt-0">
+                            <div class="row">
+                                <div class="col-11">
+                                    <p class="card-text">
+                                        {{ product.description }}
+                                    </p>
+                                </div>
+                            </div>
+                            <hr class="mt-0">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <h5 class="card-text">£{{ product.price }}</h5>
+                                </div>
+                                <div class="col-12 col-md-6 text-right">
+                                    <a href="#" class="btn btn-dark" role="button">Add to booking</a>
                                 </div>
                             </div>
                         </div>
-                        <!-- I dont think I want this -->
-                        <!-- {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}                        
-                        {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:4 %}
-                            <div class="col-12 d-none d-xl-block mb-5">
-                                <hr>
-                            </div>
-                        {% endif %} -->
-                    {% endfor %}
+                    </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
+</div>
 {% endblock %}

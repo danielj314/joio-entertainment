@@ -1,9 +1,11 @@
 /* CSS HEX */
+/* 
 --neon-blue: #5863f8;
 --eerie-black: #232323;
 --dark-pastel-green: #0cca4a;
 --azure-web: #f2fdff;
---engineering-orange: #b80c09;
+--engineering-orange: #b80c09; 
+*/
 
 
 html {
@@ -112,6 +114,17 @@ body {
 .hero-text {
     width: 600px;
     max-width: 90%;
+}
+
+
+/* -------------------------------- Products Page */
+
+.product-card {
+    max-width: 900px;
+}
+
+.product-img {
+    max-width: 400px;
 }
 
 
