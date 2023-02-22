@@ -69,6 +69,10 @@ body {
     color: white;
 }
 
+border-neon-blue {
+    border: 2px solid #5863f8 !important;
+}
+
 /* .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
@@ -79,11 +83,27 @@ body {
     color: white;
 } */
 
+.btt-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.btt-link {
+    cursor: pointer;
+}
+
 
 /* -------------------------------- Colors */
 
 .text-black {
     color: #000 !important;
+}
+
+.tex-neon-blue {
+    color: #5863f8 !important;
 }
 
 .text-white {
