@@ -32,7 +32,18 @@
             </div>
         </form>
     </div>
-
+    <!--Filter caregories-->
+    <div class="dropdown d-flex justify-content-center mb-3">
+        <button class="btn btn-neon-blue dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+          Categories
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'products' %}">All Services</a>
+            <a class="dropdown-item" href="{% url 'products' %}?category=music_dance">Music</a>
+            <a class="dropdown-item" href="{% url 'products' %}?category=photography">Photography</a>
+            <a class="dropdown-item" href="{% url 'products' %}?category=decorations">Decorations</a>
+        </div>
+      </div>
     <!--Products-->
     <div class="product-container col-10 offset-1 col-lg-8 offset-lg-2">
         <div class="row">

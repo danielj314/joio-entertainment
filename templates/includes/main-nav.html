@@ -1,6 +1,6 @@
 <div class="d-none d-md-block col-12 text-center nav-2">
     <a href="{% url 'products' %}">All Services</a>
-    <a href="#">Music</a>
-    <a href="#">Photography</a>
-    <a href="#">Decorations</a>
+    <a href="{% url 'products' %}?category=music_dance">Music</a>
+    <a href="{% url 'products' %}?category=photography">Photography</a>
+    <a href="{% url 'products' %}?category=decorations">Decorations</a>
 </div>
