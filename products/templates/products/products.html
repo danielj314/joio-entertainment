@@ -52,24 +52,24 @@
             <div class="card card-full-width mb-3 product-card align-items-center">
                 <div class="row no-gutters align-items-center">
                     <!--Product Image-->
-                    <div class="col-md-6 col-lg-7">
+                    <div class="col-md-6">
                         {% if product.image %}
-                        <div>
+                        <div href="{% url 'product_detail' product.id %}">
                             <img class="card-img-top img-fluid product-img" src="{{ product.image.url }}"
                                 alt="{{ product.name }}">
                         </div>
                         {% else %}
-                        <div>
+                        <div href="{% url 'product_detail' product.id %}">
                             <img class="card-img-top img-fluid product-img" src="{{ MEDIA_URL }}noimage.png"
                                 alt="{{ product.name }}">
                         </div>
                         {% endif %}
                     </div>
                     <!--Product Details-->
-                    <div class="col-md-6 col-lg-5">
+                    <div class="col-md-6">
                         <div class="card-body p-lg-5">
                             <div class="row">
-                                <div class="col-8">
+                                <div class="col-12">
                                     <h5 class="card-title">{{ product.name }}</h5>
                                 </div>
                             </div>
@@ -83,11 +83,12 @@
                             </div>
                             <hr class="mt-0">
                             <div class="row">
-                                <div class="col-12 col-md-6">
+                                <div class="col-7">
                                     <h5 class="card-text">£{{ product.price }}</h5>
+                                    <a href="{% url 'product_detail' product.id %}" class="btn text-left p-0 font-weight-bold" role="button">More info..</a>
                                 </div>
-                                <div class="col-12 col-md-6 text-right">
-                                    <a href="#" class="btn btn-neon-blue" role="button">Add to booking</a>
+                                <div class="col-5 text-right">
+                                    <a href="#" class="btn btn-success" role="button">Add to booking</a>
                                 </div>
                             </div>
                         </div>
