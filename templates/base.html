@@ -81,7 +81,7 @@
                     </li>
                     <!-- cart button -->
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link"
+                        <a class="{% if bag_items %}text-success{% else %}text-white{% endif %} nav-link"
                             href="{% url 'view_bag' %}">
                             <div class="text-center">
                                 <div><i class="fas fa-cart-shopping fa-lg"></i></div>
