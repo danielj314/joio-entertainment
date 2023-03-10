@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.contrib import messages
+from products.models import Product
 
 
 def view_bag(request):
@@ -12,12 +14,23 @@ def add_to_bag(request, item_id):
 
     quantity = int(request.POST.get('quantity', 1))
     redirect_url = request.POST.get('redirect_url')
+    product = get_object_or_404(Product, pk=item_id)
     bag = request.session.get('bag', {})
 
-    if item_id in list(bag.keys()):
-        bag[item_id] += quantity
+    if item_id in bag:
+        # If item already in bag, check if quantity exceeds quantity available
+        if quantity + bag[item_id] > product.qty_available:
+            # add toast error message here
+            return redirect(redirect_url)
+        else:
+            bag[item_id] += quantity
     else:
-        bag[item_id] = quantity
+        # If item not in bag, add it to the bag after checking that quantity is available
+        if quantity > product.qty_available:
+            # add toast error message here
+            return redirect(redirect_url)
+        else:
+            bag[item_id] = quantity
 
     request.session['bag'] = bag
     return redirect(redirect_url)
@@ -27,9 +40,12 @@ def adjust_bag(request, item_id):
     """ Adjust the quantity of the specified product to the specified amount """
 
     quantity = int(request.POST.get('quantity'))
+    product = get_object_or_404(Product, pk=item_id)
     bag = request.session.get('bag', {})
 
-    if quantity > 0:
+    if quantity > product.qty_available:
+        messages.error(request, f"Sorry, there are only {product.qty_available} of '{product.name}' available on this day.")
+    elif quantity > 0:
         bag[item_id] = quantity
     else:
         bag.pop(item_id)

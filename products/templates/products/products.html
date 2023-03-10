@@ -90,7 +90,7 @@
                                 <div class="col-5 text-right">
                                     <form method="POST" action="{% url 'add_to_bag' item_id=product.id %}">
                                         {% csrf_token %}
-                                        <input type="hidden" name="quantity" value="1" min="1">
+                                        <input type="hidden" name="quantity" value="1">
                                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                         <button class="btn btn-success" type="submit">Add to booking</button>
                                       </form>
