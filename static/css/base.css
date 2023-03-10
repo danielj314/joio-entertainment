@@ -93,6 +93,7 @@ border-neon-blue {
 }
 
 .btt-link,
+.update-link,
 .remove-item {
     cursor: pointer;
 }
