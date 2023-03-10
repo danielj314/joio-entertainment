@@ -79,11 +79,6 @@
                                         <a class="update-link text-info"><small>Update</small></a>
                                         <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                                     </td>
-                                    <!-- <td class="py-3 w-25">
-                                        <p class="my-0">{{ item.quantity }}</p>
-                                        <a class="modify-item" href="{% url 'product_detail' item.product.id %}"><small>Modify</small></a><br>
-                                        <a class="remove-item text-danger" id="remove_{{ item.item_id }}"><small>Remove</small></a>
-                                    </td> -->
                                     <td class="py-3">
                                         <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                                     </td>

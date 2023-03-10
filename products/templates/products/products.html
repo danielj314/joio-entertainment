@@ -88,7 +88,12 @@
                                     <a href="{% url 'product_detail' product.id %}" class="btn text-left p-0 font-weight-bold text-neon-blue" role="button">More info..</a>
                                 </div>
                                 <div class="col-5 text-right">
-                                    <a href="#" class="btn btn-success" role="button">Add to booking</a>
+                                    <form method="POST" action="{% url 'add_to_bag' item_id=product.id %}">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="quantity" value="1" min="1">
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                        <button class="btn btn-success" type="submit">Add to booking</button>
+                                      </form>
                                 </div>
                             </div>
                         </div>
