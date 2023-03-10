@@ -20,17 +20,19 @@ def add_to_bag(request, item_id):
     if item_id in bag:
         # If item already in bag, check if quantity exceeds quantity available
         if quantity + bag[item_id] > product.qty_available:
-            # add toast error message here
+            messages.error(request, f"Sorry, only {product.qty_available} '{product.name}' available on this day.")
             return redirect(redirect_url)
         else:
             bag[item_id] += quantity
+            messages.success(request, f'Added {product.name} to your bag')
     else:
         # If item not in bag, add it to the bag after checking that quantity is available
         if quantity > product.qty_available:
-            # add toast error message here
+            messages.error(request, f"Sorry, only {product.qty_available} '{product.name}' available on this day.")
             return redirect(redirect_url)
         else:
             bag[item_id] = quantity
+            messages.success(request, f'Added {product.name} to your bag')
 
     request.session['bag'] = bag
     return redirect(redirect_url)
