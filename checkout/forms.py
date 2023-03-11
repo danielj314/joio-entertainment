@@ -11,6 +11,11 @@ class OrderForm(forms.ModelForm):
                   'street_address1', 'street_address2',
                   'town_or_city', 'postcode',)
 
+        widgets = {
+            'event_date': forms.DateInput(attrs={'type': 'date'}),
+            'event_time': forms.TimeInput(attrs={'type': 'time'}),
+        }
+
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated
@@ -21,7 +26,7 @@ class OrderForm(forms.ModelForm):
             'event_date': 'Event Date',
             'event_time': 'Event Time',
             'event_location': 'Event Location',
-            'event_postcode': 'Event Postcode',
+            'event_postcode': 'Event Location Postcode',
             'full_name': 'Full Name',
             'email': 'Email Address',
             'phone_number': 'Phone Number',
@@ -41,3 +46,4 @@ class OrderForm(forms.ModelForm):
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
+
