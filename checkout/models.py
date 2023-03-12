@@ -37,12 +37,13 @@ class Order(models.Model):
         """
         Update grand total each time a line item is added
         """
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
+        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         if self.order_total < 1000:
             self.deposit = self.order_total / 2
         else:
             self.deposit = 500
         self.remaining_balance = self.order_total - self.deposit
+        self.deposit_payed = self.deposit
         self.save()
 
     def save(self, *args, **kwargs):

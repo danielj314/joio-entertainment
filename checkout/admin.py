@@ -26,7 +26,7 @@ class OrderAdmin(admin.ModelAdmin):
                     'event_location', 'order_total', 'deposit_payed',
                     'remaining_balance',)
 
-    ordering = ('-event_date',)
+    ordering = ('event_date',)
 
 
 admin.site.register(Order, OrderAdmin)

@@ -34,7 +34,6 @@ class OrderForm(forms.ModelForm):
             'street_address2': 'Street Address 2',
             'town_or_city': 'Town or City',
             'postcode': 'Postcode',
-
         }
 
         self.fields['full_name'].widget.attrs['autofocus'] = True
@@ -46,4 +45,3 @@ class OrderForm(forms.ModelForm):
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
-
