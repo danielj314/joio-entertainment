@@ -12,7 +12,8 @@ class OrderAdmin(admin.ModelAdmin):
 
     readonly_fields = ('order_number', 'order_date',
                        'order_total', 'deposit_payed',
-                       'remaining_balance')
+                       'remaining_balance', 'original_bag',
+                       'stripe_pid')
 
     fields = ('order_number', 'event_date', 'event_time',
               'event_location', 'event_postcode',
@@ -20,11 +21,12 @@ class OrderAdmin(admin.ModelAdmin):
               'street_address1', 'street_address2',
               'town_or_city', 'postcode',
               'order_date', 'order_total',
-              'deposit_payed', 'remaining_balance',)
+              'deposit_payed', 'remaining_balance',
+              'original_bag', 'stripe_pid')
 
-    list_display = ('order_number', 'event_date', 'full_name',
-                    'event_location', 'order_total', 'deposit_payed',
-                    'remaining_balance',)
+    list_display = ('order_number', 'order_date', 'full_name',
+                    'event_location', 'event_date', 'order_total', 
+                    'deposit_payed', 'remaining_balance',)
 
     ordering = ('event_date',)
 
