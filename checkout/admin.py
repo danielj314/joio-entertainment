@@ -15,8 +15,8 @@ class OrderAdmin(admin.ModelAdmin):
                        'remaining_balance', 'original_bag',
                        'stripe_pid')
 
-    fields = ('order_number', 'event_date', 'event_time',
-              'event_location', 'event_postcode',
+    fields = ('order_number', 'user_profile', 'event_date',
+              'event_time', 'event_location', 'event_postcode',
               'full_name', 'email', 'phone_number',
               'street_address1', 'street_address2',
               'town_or_city', 'postcode',
