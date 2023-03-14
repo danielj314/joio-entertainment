@@ -5,10 +5,13 @@ from django.db.models import Sum
 from django.conf import settings
 
 from products.models import Product
+from profiles.models import UserProfile
 
 
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
+                                     null=True, blank=True, related_name='orders')
     event_date = models.DateField(null=True, blank=False)
     event_time = models.TimeField(null=True, blank=False)
     event_location = models.CharField(max_length=80, null=True, blank=False)
