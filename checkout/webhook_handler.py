@@ -35,9 +35,9 @@ class StripeWH_Handler:
             intent.latest_charge
         )
 
-        billing_details = stripe_charge.billing_details # updated
+        billing_details = stripe_charge.billing_details
         shipping_details = intent.shipping
-        deposit_payed = round(stripe_charge.amount / 100, 2) # updated
+        deposit_payed = round(stripe_charge.amount / 100, 2)
 
         # Clean data in the billing details
         for field, value in billing_details.address.items():
@@ -81,10 +81,10 @@ class StripeWH_Handler:
                     full_name=shipping_details.name,
                     email=billing_details.email,
                     phone_number=shipping_details.phone,
-                    postcode=shipping_details.address.postal_code,
-                    town_or_city=shipping_details.address.city,
                     street_address1=shipping_details.address.line1,
                     street_address2=shipping_details.address.line2,
+                    town_or_city=shipping_details.address.city,
+                    postcode=shipping_details.address.postal_code,
                     original_bag=bag,
                     stripe_pid=pid,
                 )
@@ -98,6 +98,7 @@ class StripeWH_Handler:
                     order_line_item.save()
 
             except Exception as e:
+                print(e)
                 if order:
                     order.delete()
                 return HttpResponse(

@@ -9,9 +9,9 @@ from products.models import Product
 
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
-    event_date = models.DateField(null=False, blank=False)
-    event_time = models.TimeField(null=False, blank=False)
-    event_location = models.CharField(max_length=80, null=False, blank=False)
+    event_date = models.DateField(null=True, blank=False)
+    event_time = models.TimeField(null=True, blank=False)
+    event_location = models.CharField(max_length=80, null=True, blank=False)
     event_postcode = models.CharField(max_length=20, null=True, blank=True)
 
     full_name = models.CharField(max_length=50, null=False, blank=False)
