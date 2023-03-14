@@ -1,0 +1,23 @@
+Hello {{ order.full_name }}!
+
+This is a confirmation of your booking with Joio Entertainment. Your order information is below:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.order_date }}
+
+Order Total: ${{ order.order_total }}
+Deposit Payed: ${{ order.deposit_payed }}
+Remaining Balance: ${{ order.remaining_balance }}
+
+Your event will take place at {{ order.event_time }} on the {{ order.event_date }} in {{ order.event_location }}.
+
+We've got your phone number on file as {{ order.phone_number }}.
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+Thank you for your order!
+
+Sincerely,
+
+Jonny Hughes
+CEO - Joio Entertainment

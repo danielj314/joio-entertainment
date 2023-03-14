@@ -38,7 +38,7 @@
                         <thead>
                             <tr>
                                 <th>Order Number</th>
-                                <th>Date</th>
+                                <th>Event Date</th>
                                 <th>Items</th>
                                 <th>Order Total</th>
                             </tr>
@@ -52,7 +52,7 @@
                                             {{ order.order_number|truncatechars:6 }}
                                         </a>
                                     </td>
-                                    <td>{{ order.date }}</td>
+                                    <td>{{ order.event_date }}</td>
                                     <td>
                                         <ul class="list-unstyled">
                                             {% for item in order.lineitems.all %}
@@ -62,7 +62,7 @@
                                             {% endfor %}
                                         </ul>
                                     </td>
-                                    <td>${{ order.grand_total }}</td>
+                                    <td>${{ order.order_total }}</td>
                                 </tr>
                             {% endfor %}
                         </tbody>
