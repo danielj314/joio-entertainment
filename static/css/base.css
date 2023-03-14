@@ -25,6 +25,14 @@ body {
     line-height: 1.2;
 }
 
+a {
+    color: #5863f8;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
 /* -------------------------------- Header */
 
 /* from Bulma */
@@ -73,15 +81,6 @@ body {
     border: 2px solid #5863f8 !important;
 }
 
-/* .shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: #222;
-    color: white;
-} */
 
 .btt-button {
     height: 42px;
