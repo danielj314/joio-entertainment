@@ -71,6 +71,7 @@
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
                             <a href="{% url 'admin:index' %}" class="dropdown-item">Site Admin</a>
+                            <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
                             {% endif %}
                             <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                             <a href="#" class="dropdown-item">My Reviews</a>
