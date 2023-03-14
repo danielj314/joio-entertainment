@@ -64,13 +64,12 @@ body {
 
 /* -------------------------------- Buttons */
 
-
 .btn-neon-blue {
     background: #5863f8;
     color: white;
 }
 
-border-neon-blue {
+.border-neon-blue {
     border: 2px solid #5863f8 !important;
 }
 
@@ -219,6 +218,7 @@ border-neon-blue {
 }
 
 
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -226,6 +226,60 @@ border-neon-blue {
   .container {
     max-width: 80%;
   }
+}
+
+/* Allauth form formatting */
+
+.allauth-form-inner-content p {
+    margin-top: 1.5rem; /* mt-4 */
+    color: #6c757d; /* text-secondary */
+}
+
+.allauth-form-inner-content input {
+    border-color: #000;
+    border-radius: 4px;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
+}
+
+.allauth-form-inner-content button,
+.allauth-form-inner-content input[type='submit'] {
+	/* btn */
+	display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #5863f8;
+    border: 1px solid #5863f8;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 4px;
+
+    /* standard bootstrap btn transitions */
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.allauth-form-inner-content button:hover,
+.allauth-form-inner-content input[type='submit']:hover {	
+	color: #fff;
+    background-color: #1e28bb;
+    border-color: #222;
+}
+
+.allauth-form-inner-content a {
+	color: #5863f8; /* text-info */
 }
 
 @media (max-width: 450px) {
@@ -237,3 +291,5 @@ border-neon-blue {
         width: 100px;
     }
   }
+
+  

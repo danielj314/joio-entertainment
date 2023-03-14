@@ -70,9 +70,9 @@
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
-                            <a href="" class="dropdown-item">Site Admin</a>
+                            <a href="{% url 'admin' %}" class="dropdown-item">Site Admin</a>
                             {% endif %}
-                            <a href="" class="dropdown-item">My Profile</a>
+                            <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                             <a href="#" class="dropdown-item">My Reviews</a>
                             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
