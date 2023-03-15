@@ -137,6 +137,43 @@
     {% block content %}
     {% endblock %}
 
+    <footer class="mt-auto mb-8 bg-dark">
+        <div class="container-fluid">
+            <hr>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 text-sm-right">
+                        <ul class="list-inline social-links">
+                            <li class="list-inline-item mr-3">
+                                <a target="_blank" href="https://www.facebook.com">
+                                    <i class="fa-brands fa-facebook-square" aria-hidden="true"></i>
+                                    <span class="sr-only">Facebook</span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item mr-3">
+                                <a target="_blank" href="tel:+447946602157">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                    <span class="sr-only">Call</span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item mr-3">
+                                <a target="_blank" href="mailto:jonny@joioents.co.uk?subject=joioents.co.uk enquiry">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    <span class="sr-only">Email</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 text-sm-left">
+                        <p class="small">
+                            Copyright © 2023 BDJ Design
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     {% block postloadjs %}
     <script type="text/javascript">
         $('.toast').toast('show');
