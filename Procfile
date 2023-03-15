@@ -1,1 +1,1 @@
-web: gunicorn joio-entertainment.wsgi:application
+web: gunicorn joio_entertainment.wsgi:application
