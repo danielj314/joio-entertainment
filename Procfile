@@ -1,0 +1,1 @@
+web: gunicorn joio-entertainment.wsgi:application
