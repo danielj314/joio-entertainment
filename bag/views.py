@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import (
+    render, redirect, reverse, HttpResponse, get_object_or_404
+)
 from django.contrib import messages
 from products.models import Product
 
@@ -20,15 +22,18 @@ def add_to_bag(request, item_id):
     if item_id in bag:
         # If item already in bag, check if quantity exceeds quantity available
         if quantity + bag[item_id] > product.qty_available:
-            messages.error(request, f"Sorry, only {product.qty_available} '{product.name}' available on this day.")
+            messages.error(request, f"Sorry, only {product.qty_available} "
+                                    f"'{product.name}' available on this day.")
             return redirect(redirect_url)
         else:
             bag[item_id] += quantity
-            messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
+            messages.success(request, f"Updated {product.name} "
+                                      f"quantity to {bag[item_id]}")
     else:
-        # If item not in bag, add it to the bag after checking that quantity is available
+        # If item not in bag, add it to  bag after checking  quantity available
         if quantity > product.qty_available:
-            messages.error(request, f"Sorry, only {product.qty_available} '{product.name}' available on this day.")
+            messages.error(request, f"Sorry, only {product.qty_available} "
+                                    f"'{product.name}' available on this day.")
             return redirect(redirect_url)
         else:
             bag[item_id] = quantity
@@ -46,10 +51,12 @@ def adjust_bag(request, item_id):
     bag = request.session.get('bag', {})
 
     if quantity > product.qty_available:
-        messages.error(request, f"Sorry, only {product.qty_available} '{product.name}' available on this day.")
+        messages.error(request, f"Sorry, only {product.qty_available} "
+                                f"'{product.name}' available on this day.")
     elif quantity > 0:
         bag[item_id] = quantity
-        messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
+        messages.success(
+            request, f'Updated {product.name} quantity to {bag[item_id]}')
     else:
         bag.pop(item_id)
         messages.success(request, f'Removed {product.name} from your booking')

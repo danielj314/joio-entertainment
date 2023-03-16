@@ -25,7 +25,7 @@ class OrderAdmin(admin.ModelAdmin):
               'original_bag', 'stripe_pid')
 
     list_display = ('order_number', 'order_date', 'full_name',
-                    'event_location', 'event_date', 'order_total', 
+                    'event_location', 'event_date', 'order_total',
                     'deposit_payed', 'remaining_balance',)
 
     ordering = ('event_date',)
