@@ -1,32 +1,34 @@
 {% extends "base.html" %}
 {% load static %}
-{% load bag_tools %}
-
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="container min-vh-100 mb-2">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">Contact Page</h2>
-                <hr>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-            </div>
+<div class="container min-vh-100 mb-5">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4">Contact Us</h2>
+            <hr>
         </div>
     </div>
-{% endblock %}
 
-{% block postloadjs %}
+    <div class="row">
+        <div class="col">
+            <p class="mb-4 mt-5"><i class="fas fa-home mr-3 "></i> Llanelli, SA15 4SA, Cymru, UK</p>
+            <p class="mb-4"><i class="fas fa-envelope mr-3 "></i> joio-ents@example.com</p>
+            <p class="mb-4"><i class="fas fa-phone mr-3 "></i> + 44 7656 324187</p>
+            <p class="mb-4"><a href="https://www.facebook.com/" class="mr-4" target="_blank" rel="noopener"
+                    aria-label="link to joio facebook website (opens in new tab)"><i class="fab fa-facebook-f"></i></a>
+                YOU CAN NOW JOIN US ON <a href="https://www.facebook.com/" class="me-4 text-neon-blue" target="_blank"
+                    rel="noopener" aria-label="link to joio facebook website (opens in new tab)">FACEBOOK!</a></p>
+        </div>
+    </div>
+</div>
 {% endblock %}

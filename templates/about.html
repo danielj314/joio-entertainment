@@ -10,18 +10,21 @@
 {% endblock %}
 
 {% block content %}
-<div class="container h-100">
+<div class="container h-100  mb-2">
     <div class="row">
         <div class="col">
-            <h2 class="logo-font mt-3">
-                About Us
-            </h2>
+            <hr>
+            <h2 class="logo-font mb-4">About Us</h2>
+            <hr>
         </div>
-        <div class="col-12 card info-style">
-            <h3 class="mt-5 text-center">
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <h3 class="mt-5">
                 Welcome to <strong>Joio Entertainment</strong>
             </h3>
-            <div class="mt-4 text-center">
+            <div class="mt-4">
                 <p>South Wales' premier entertainment company for DJ, photobooth and wedding party hire.</p>
                 <p>Founded by the exceptionally talented entrepreneur Jonathan Hughes, Joio Entertainment has quickly
                     become the go-to source for unforgettable entertainment experiences.</p>
@@ -44,6 +47,9 @@
                     an unforgettable entertainment experience.</p>
             </div>
         </div>
-    </div>
+        <div class="col-12 col-md-6">
+            <img class="img-fluid mt-5" src="{{ MEDIA_URL }}jonny.jpeg" alt="jonny hughes">
+
+        </div>
 </div>
 {% endblock %}
