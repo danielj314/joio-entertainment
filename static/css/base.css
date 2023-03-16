@@ -318,6 +318,9 @@ a:hover {
     .navbar-brand {
         width: 100px;
     }
+    .header-container {
+        height: 100px;
+    }
   }
 
   
