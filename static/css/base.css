@@ -1,4 +1,4 @@
-/* CSS HEX */
+/* Color Pallet to be used with site */
 /* 
 --neon-blue: #5863f8;
 --eerie-black: #232323;
@@ -312,7 +312,7 @@ a:hover {
 
 @media (max-width: 450px) {
     .nav-link {
-      font-size: 12;
+      font-size: 12px;
       padding: 4px;
     }
     .navbar-brand {
@@ -322,5 +322,3 @@ a:hover {
         height: 100px;
     }
   }
-
-  

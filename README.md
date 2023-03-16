@@ -942,7 +942,7 @@ A full list of the requirements necessary to install is covered in the [deployme
 
 # Testing
 
-Due to the extensive testing necessary for the Morgan & Co website, the full documentation can be found here - [TESTING](TESTING.md).
+Due to the extensive testing necessary for the Joio Entertainment website, the full documentation can be found here - [TESTING](TESTING.md).
 
 [Back to table of contents](#table-of-contents)
 
