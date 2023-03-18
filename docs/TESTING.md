@@ -279,22 +279,32 @@ Responsivity tests were carried out using Google Chrome DevTools. Device screen 
 ### Logo image not appearing on site
 * It was first thought that I had made a mistake with the image file path but later realised that the path was not written using Django syntax.
 
-### Failing payment_intent.successed Webhooks.
+### Failing payment_intent.successed Webhooks
 
 * Stripe was linked and the majority of my webhooks were passing. However, my payment_intent.succeeded was failing and I was getting 500 errors. 
 
 * I finally realised that the customer info and billing info fields automatically requested by the webhook were different to the fields in my checkout form. by commenting out the unused fields in the webhook form, I finally managed a successful webhook and in turn deleted these fields from the webhook file.
 
-### Data not appearing in AWS storage.
+### Data not appearing in AWS storage
 
 * After correctly undertaking the migration steps to use the external storage, the data was not appearing within AWS.
 
 * It was finally realised that the custom_storages.py file was not spelled correctly.
 
-### Website crashed after adding Contact page.
+### Website crashed after adding Contact page
 
 * It was finally realised that I had not added the views.py file necessary to complete the page creation.
 
+
+### Bootstrap dropdow menus were not clickable
+
+* Discovered that the scripts had somehow been copied twice into base.html.  The extra lines were erased and re-ordered which fixed the issue.
+
+* It was possible to add more products than that which are available in stock. This could be done by going back to the same product page and adding the maximum number available once again to the bag. 
+
+* This was resolved by adding a piece of code that checked the "product quantity available" field in the product form and compared it with the number of the product that was trying to be added to the bag.
+
+* Now, if the number of products in the bag become higher than that which were available, the user gets a pop-up message that notifies them that they are attempting to add too high a quantity and tells them how many are actually available on that day.
 
 ## Unresolved
 
