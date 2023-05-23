@@ -79,3 +79,20 @@ def submit_review(request):
             Please try adding your review again.')
 
     return render(request, 'reviews/review_form.html')
+
+
+@login_required
+def delete_review(request, review_id):
+    """ Delete a review """
+    review = get_object_or_404(Review, id=review_id)
+
+    # Allow superuser or author of review to delete
+    if not (request.user.is_superuser or review.review_author == request.user):
+        messages.error(request, 'Sorry, you are not authorized to delete this review.')
+        return redirect(reverse('reviews'))
+
+    review.delete()
+
+    messages.success(request, f'Review has been deleted!')
+
+    return redirect(reverse('reviews'))

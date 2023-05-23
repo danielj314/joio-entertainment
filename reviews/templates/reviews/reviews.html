@@ -34,6 +34,13 @@
       <div class="font-weight-bold mb-2"><i class="fa-solid fa-star mr-2 text-warning"></i>{{ review.review_rating }}/5</div>
       <div><i class="fa-solid fa-user mr-4"></i> {{ review.review_author }}</div>
       <div><i class="fa-regular fa-calendar mr-4"></i>{{ review.review_date }}</div>
+      <hr>
+      {% if request.user == review.review_author or request.user.is_superuser %}
+                        <small>
+                            <!-- <a href="">Edit</a> |  -->
+                            <a class="text-danger" href="{% url 'delete_review' review.id %}">Delete</a>
+                        </small>
+                    {% endif %}
     </div>
   </div>
   {% endfor %}
