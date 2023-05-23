@@ -29,8 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 
-# ALLOWED_HOSTS = ['joio-entertainment.herokuapp.com', 'localhost']
-ALLOWED_HOSTS = ['joio-entertainment.herokuapp.com', '8000-danielj314-joioentertai-8hxd67drymw.ws-eu97.gitpod.io']
+ALLOWED_HOSTS = ['joio-entertainment.herokuapp.com', 'localhost']
 
 
 # Application definition

@@ -5,63 +5,38 @@
 {% endblock %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="container min-vh-100">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">Reviews</h2>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                    {% for review in reviews %}
-                      <div class="carousel-item">
-                        <div src="..." class="d-block text-center w-100">
-                            <div>{{ review.review_text }}</div>
-                            <div>{{ review.review_rating }}</div>
-                            <div>{{ review.review_date }}</div>
-                        </div>
-                      </div>
-                    {% endfor %}
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
-                    </button>
-                  </div>
-            </div>
-        </div>
+<div class="container min-vh-100">
+  <div class="row">
+    <div class="col">
+      <hr>
+      <h2 class="logo-font mb-4">Reviews</h2>
+      <hr>
     </div>
-{% endblock %}
+  </div>
+  <div class="row">
+    <div class="col">
+      
+    </div>
+  </div>
 
-{% block postloadjs %}
-    {{ block.super }}
-    <script>
-		$('.carousel').carousel({
-        interval: 2000
-        })
+  {% for review in reviews %}
+  <div class="card bg-light mb-2">
+    <div class="card-body text-center">
+      <div class="font-weight-bold mb-2">"{{ review.review_text }}"</div>
+      <div class="font-weight-bold mb-2"><i class="fa-solid fa-star mr-2 text-warning"></i>{{ review.review_rating }}/5</div>
+      <div><i class="fa-solid fa-user mr-4"></i> {{ review.review_author }}</div>
+      <div><i class="fa-regular fa-calendar mr-4"></i>{{ review.review_date }}</div>
+    </div>
+  </div>
+  {% endfor %}
 
-        $('.carousel-item').first().addClass('active')
-    </script>
+</div>
 {% endblock %}

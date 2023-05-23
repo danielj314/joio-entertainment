@@ -3,9 +3,7 @@ from django.contrib.auth.models import User
 
 
 class Review(models.Model):
-    """
-    Review model for user to complete
-    """
+    """ Review model for user to complete """
 
     RATING = [
         (1, '1'),

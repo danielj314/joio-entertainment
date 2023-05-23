@@ -24,7 +24,7 @@ def reviews(request):
 
 def review_form(request):
     """ A view to load review form """
-    
+
     review_form = ReviewForm()
 
     context = {
@@ -48,5 +48,3 @@ def submit_review(request):
         review_form.save()
 
     return render(request, 'reviews/reviews.html')
-
-
