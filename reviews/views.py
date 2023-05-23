@@ -34,6 +34,7 @@ def review_form(request):
     return render(request, 'reviews/review_form.html', context)
 
 
+@login_required
 def submit_review(request):
     """ A view to submit review form """
 
@@ -47,4 +48,34 @@ def submit_review(request):
 
         review_form.save()
 
-    return render(request, 'reviews/reviews.html')
+        messages.success(request, 'Thank You! Your review \
+            has been added!')
+
+        return render(request, 'reviews/reviews.html')
+    else:
+        messages.error(request, 'Oops, something went wrong! \
+            Please try adding your review again.')
+
+
+def submit_review(request):
+    """ A view to submit review form """
+
+    review_form = ReviewForm(data=request.POST)
+    author = request.user
+
+    if review_form.is_valid():
+        review_form.instance.review_author = author
+        review_form.instance.review_text = request.POST.get("review_text")
+        review_form.instance.review_rating = request.POST.get("review_rating")
+
+        review_form.save()
+
+        messages.success(request, 'Thank You! Your review \
+            has been added!')
+        return redirect(reverse('reviews'))
+
+    else:
+        messages.error(request, 'Failed to add review. \
+            Please try adding your review again.')
+
+    return render(request, 'reviews/review_form.html')
