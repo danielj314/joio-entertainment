@@ -22,28 +22,26 @@
     </div>
   </div>
   <div class="row">
-    <div class="col">
-      
+      {% for review in reviews %}
+      <div class="card bg-light mb-2 col-md-6 col-lg-4 d-block">
+        <div class="card-body text-center">
+          <div class="font-weight-bold mb-2">"{{ review.review_text }}"</div>
+          <div class="font-weight-bold mb-2"><i
+              class="fa-solid fa-star mr-2 text-warning"></i>{{ review.review_rating }}/5
+          </div>
+          <div><i class="fa-solid fa-user mr-4"></i> {{ review.review_author }}</div>
+          <div><i class="fa-regular fa-calendar mr-4"></i>{{ review.review_date }}</div>
+          {% if request.user == review.review_author or request.user.is_superuser %}
+          <hr>
+          <small>
+            <a class="text-neon-blue" href="{% url 'edit_review' review.id %}">Edit</a> | 
+            <a class="text-danger" href="{% url 'delete_review' review.id %}">Delete</a>
+          </small>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
     </div>
   </div>
-
-  {% for review in reviews %}
-  <div class="card bg-light mb-2">
-    <div class="card-body text-center">
-      <div class="font-weight-bold mb-2">"{{ review.review_text }}"</div>
-      <div class="font-weight-bold mb-2"><i class="fa-solid fa-star mr-2 text-warning"></i>{{ review.review_rating }}/5</div>
-      <div><i class="fa-solid fa-user mr-4"></i> {{ review.review_author }}</div>
-      <div><i class="fa-regular fa-calendar mr-4"></i>{{ review.review_date }}</div>
-      <hr>
-      {% if request.user == review.review_author or request.user.is_superuser %}
-                        <small>
-                            <!-- <a href="">Edit</a> |  -->
-                            <a class="text-danger" href="{% url 'delete_review' review.id %}">Delete</a>
-                        </small>
-                    {% endif %}
-    </div>
-  </div>
-  {% endfor %}
-
 </div>
 {% endblock %}

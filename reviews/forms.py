@@ -3,7 +3,7 @@ from .models import Review
 
 
 class ReviewForm(forms.ModelForm):
-    """ ReviewForm to allow users to add reviews """
+    """ Form to allow users to add reviews """
     class Meta:
         model = Review
         fields = ['review_text', 'review_rating']
