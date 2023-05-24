@@ -207,6 +207,8 @@ This schema is essential for developing the website's functionality, its feature
 - OrderLineItem - It contains information relating to an order and its items. Connects to the Product and Order model.
 - Product - It contains all of the information relating to a product found on the website. Connects to OrderLineItem and Category.
 - Category - It contains all of the information relating to a category. Related to products for filtering and sorting. Connects to the Product model.
+- Reviews - It contains all the information relating to a review that has been submitted by an user
+-Contact - It contains all the information relating to a contact form that has been submitted by an user
 
 [Back to table of contents](#table-of-contents)
 
@@ -468,6 +470,7 @@ The Shopping Bag is the page where users add their products to, before advancing
 - Grand total - the grand total of bag total and the delivery in GBP (£).
 - 'Keep Shopping' button which directs user back to the main products page when clicked.
 - 'Secure Checkout' button which directs user to the Checkout page when clicked.
+- The number of each item selected is the maximum possible per event. As such the item's availability never reduces in the backend since they are only reserved for the specific day of the event.
 
 
 ### - Checkout page
@@ -487,9 +490,11 @@ Form for event information, including location of event and time and date. Event
 - 'Adust Bag' button, to return to Shopping Bag on click.
 - 'Complete Order' button. Users will click this button to confirm all and authorize the purchase. Take them to Checkout Success page if valid, otherwise returns here.
 - Text message underneath buttons to inform user of the charge to their card when processed.
+- The store owner always requests that the final payment be made on the day of the event, face to face with the client. This is why the online store only takes a deposit for the event from the client.
 
 
 ### - Checkout Success page
+
 The Checkout Success page is where users get a confirmation of their order details after a successful purchase. The features include:
 - 'Thank You' page title at top of page.
 - A message to say that all details are forwarded to the given email.
@@ -501,9 +506,17 @@ The Checkout Success page is where users get a confirmation of their order detai
 
 This page contains a small back-story of the Joio company.
 
+### - Reviews page
+
+This page contains all of the reviews that have been written by registered users of the site.
+
+### - Create Review page
+
+This page allows registered users to submit a review of the company. The reviews are divided into a comments section and a rating section where the company can be rated out of 5 by the review author.
+
 ### - Contact page
 
-This page contains contact information and social media links ot the company. Page title, text and links against the background image found on the homepage.
+This page contains contact information and social media links ot the company. Page title, text and links against the background image found on the homepage. There is a form on the pach that users can submit with any questions or comments they care to provide the company with. these are filled out in a form and are stored with the person's contact details in the store admin.
 
 
 ### - Sign In page

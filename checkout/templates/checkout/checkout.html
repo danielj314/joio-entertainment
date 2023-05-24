@@ -67,6 +67,10 @@
                         <p class="my-0"><strong>£{{ deposit | floatformat:2 }}</strong></p>
                         <p class="my-0">£{{ remaining_balance | floatformat:2 }}</p>
                     </div>
+                    <div class="col-4"></div>
+                    <div class="col-8 text-right">
+                        <p class="my-0">(remaining balance to be payed directly to your representative on the day of the event)</p>                        
+                    </div>
                 </div>
             </div>
             <div class="col-12 col-lg-6">
@@ -128,7 +132,8 @@
 							<span class="icon">
 								<i class="fas fa-exclamation-circle"></i>
 							</span>
-							<span>Your card will be charged a deposit of <strong>£{{ deposit|floatformat:2 }}</strong></span>
+							<span>Your card will be charged a deposit of <strong>£{{ deposit|floatformat:2 }}</strong></span><br>
+							<span>Remaining amount payed to your Joio Entertainment representative on the day of the event.</strong></span>
 						</p>
 					</div>
                 </form>
