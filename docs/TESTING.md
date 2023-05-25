@@ -188,8 +188,8 @@ Responsivity tests were carried out using Google Chrome DevTools. Device screen 
  | 11 | Site User | Easily access my user profile | Access my account quickly | Navigation (all pages) | 
  | 12 | Site User | Have a personalised user profile | With my personal order history and be able to update my default billing address | User Profile Page | 
  | 13 | Site User | Be able to make an account after checkout | To be able to see my booking if I haven't made one before | Checkout Page | 
- | 14 | Site User | Make an account to leave ratings and reviews | Comment on my event and help others make a choice | Not achieved - Reviews Page not yet added | 
- | 15 | Site User | See my ratings and reviews in my user profile | So I can see what reviews/ ratings I have left easily | Not achieved | 
+ | 14 | Site User | Make an account to leave ratings and reviews | Comment on my event and help others make a choice |  Add Review Page | 
+ | 15 | Site User | See my ratings and reviews in my user profile | So I can see what reviews/ ratings I have left easily | Reviews page | 
  | Sorting and Searching | 
  | 16 | Customer | Sort/ Filter services by dedicated filters. e.g. Music, photography, availability | know whats available for specific types of events | Products Page | 
  | 17 | Customer | Search for a service by name, description or key feature | Find a specific service I'd like to book | Products Page | 
@@ -205,14 +205,11 @@ Responsivity tests were carried out using Google Chrome DevTools. Device screen 
  | Home Page | 
  | 26 | Store Owner | Showcase featured listing | Give website visitors a quick sense of the types of listings available on my website | Homepage | 
  | 27 | Store Owner | Showcase featured categories | Give website visitors a quick sense of the types of categories of services available from the company | Homepage | 
- | 28 | Store Owner | Showcase featured reviews | Show social proof and build trust with website visitors | Not 
-  yet achieved | 
+ | 28 | Store Owner | Showcase featured reviews | Show social proof and build trust with website visitors | Reviews page link on homepage | 
  | Ratings & Reviews | 
- | 29 | Customer | To be able to add a Rating/ Review | In case I wish to add a rating and or a written review | Not 
-  yet achieved | 
- | 30 | Customer | To be able to delete a Rating/ Review | In case I wish to delete a rating and or a written review | Not yet achieved | 
- | 31 | Customer | to be able to edit a Rating/ Review | In case I wish to edit a rating and or a written review | Not 
-  yet achieved | 
+ | 29 | Customer | To be able to add a Rating/ Review | In case I wish to add a rating and or a written review | Add reviews page | 
+ | 30 | Customer | To be able to delete a Rating/ Review | In case I wish to delete a rating and or a written review | Reviews page | 
+ | 31 | Customer | to be able to edit a Rating/ Review | In case I wish to edit a rating and or a written review | Edit Review page | 
 
 
 # Manual Testing
@@ -271,6 +268,18 @@ Responsivity tests were carried out using Google Chrome DevTools. Device screen 
 - Links are tested and proven to work
 - Users can update their information from the form.
 
+## Reviews
+
+- Reviews page, edit review and add review papges render as expected
+- The edit and add review forms change or add a review to the admin section
+- All reviews are displayed on the reviews page clearly and in order of newest to oldest
+
+## Contact
+
+- Contact page renders as expected
+- The contact form is submitted correctly to the admin section
+- The user is notified immediately if the message has been successfully sent or not in the messages section
+
 
 # Bugs
 
@@ -296,7 +305,7 @@ Responsivity tests were carried out using Google Chrome DevTools. Device screen 
 * It was finally realised that I had not added the views.py file necessary to complete the page creation.
 
 
-### Bootstrap dropdow menus were not clickable
+### Bootstrap dropdown menus were not clickable
 
 * Discovered that the scripts had somehow been copied twice into base.html.  The extra lines were erased and re-ordered which fixed the issue.
 
@@ -305,6 +314,13 @@ Responsivity tests were carried out using Google Chrome DevTools. Device screen 
 * This was resolved by adding a piece of code that checked the "product quantity available" field in the product form and compared it with the number of the product that was trying to be added to the bag.
 
 * Now, if the number of products in the bag become higher than that which were available, the user gets a pop-up message that notifies them that they are attempting to add too high a quantity and tells them how many are actually available on that day.
+
+### homepage not rendering on live site
+
+* Discovered that the 500 error was being caused by a piece of code related to the reviews section that had been placed inside the views.py file of the home app.
+
+* once deleted the hompage rendered correctly
+
 
 ## Unresolved
 
@@ -318,7 +334,7 @@ Responsivity tests were carried out using Google Chrome DevTools. Device screen 
 
 * I tried to add these fields as metadata, using some advice I had found on stack overflow but this didnt appear to work.
 
-* For now I have changed the fields in the Order model to null=True, blank=False. this way, the information is required in the form that the customer fillls out on the checkout page but they are not required in the backend, meaning that if the order does have to be created by the webhandler, the event info is not recorded. 
+* For now I have changed the fields in the Order model to null=True, blank=False. this way, the information is required in the form that the customer fills out on the checkout page but they are not required in the backend, meaning that if the order does have to be created by the webhandler, the event info is not recorded. 
 
 * This is a situation  I will need to spend time researching, as I'm sure it is possible to add the info within the metadata of the webhook, but I have thus far been unable to work out how. Due to the time constraints of the project, the current solution was deemed to be the best one.
 

@@ -207,8 +207,8 @@ This schema is essential for developing the website's functionality, its feature
 - OrderLineItem - It contains information relating to an order and its items. Connects to the Product and Order model.
 - Product - It contains all of the information relating to a product found on the website. Connects to OrderLineItem and Category.
 - Category - It contains all of the information relating to a category. Related to products for filtering and sorting. Connects to the Product model.
-- Reviews - It contains all the information relating to a review that has been submitted by an user
--Contact - It contains all the information relating to a contact form that has been submitted by an user
+- Reviews - It contains all the information relating to a review that has been submitted by an user. It connects to the user model to ensure the user is authenticated and logged in.
+- Contact - It contains all the information relating to a contact form that has been submitted by an user.
 
 [Back to table of contents](#table-of-contents)
 
@@ -220,8 +220,6 @@ Once the user goals, the projects intentions and aesthetic design were set out, 
 Accessibility, authorization and security levels can be controlled by combining django's authentication system found [here](https://docs.djangoproject.com/en/4.1/topics/auth/default/) and a other technical features written in custom code for the Joio website.
 
 The UserProfile model and django's User model are referenced on the backend in the views.py files and again in the templates.
-
-
 
 
 The `@login_required` decorator is used as another line of defence. Thie is found within the views files. This decorator limits access and secures these views to only signed in users. It is present for:
@@ -514,6 +512,10 @@ This page contains all of the reviews that have been written by registered users
 
 This page allows registered users to submit a review of the company. The reviews are divided into a comments section and a rating section where the company can be rated out of 5 by the review author.
 
+### - Edit Review page
+
+This page allows the author of a review to edit a review. The reviews are divided into a comments section and a rating section where the company can be rated out of 5 by the review author.
+
 ### - Contact page
 
 This page contains contact information and social media links ot the company. Page title, text and links against the background image found on the homepage. There is a form on the pach that users can submit with any questions or comments they care to provide the company with. these are filled out in a form and are stored with the person's contact details in the store admin.
@@ -641,8 +643,6 @@ There are many planned updates arranged for the Joio Entertainment website that 
 * More user features.
 * More admin/superuser rights from the website itself (not just the admin portal):
     - Create, Edit, Delete Categories.
-    - Create, Edit, Delete Rooms.
-    - Create, Edit, Delete Specials.
 * Photobook purchasing from photography stands.
 
 [Back to table of contents](#table-of-contents)
